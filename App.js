@@ -1,22 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { 
+  StyleSheet, 
+  Text, 
+  View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import {
+  Entypo
+} from '@expo/vector-icons'
 
-import Feed from './src/components/Feed'
+import TabMenu from './src/components/TabMenu/TabMenu'
+import FacebookBar from './src/components/FacebookBar/FacebookBar'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Feed/>
+    <View style={{flex:1}} >
+      <FacebookBar/>
+      <TabMenu/>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
