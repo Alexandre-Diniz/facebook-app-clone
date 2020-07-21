@@ -22,6 +22,7 @@ export default function () {
   const [iconPosition, setIconPosition] = useState([0, 0])
   const [sizeIcon, setSizeIcon] = useState(20)
   const [sizeViewIcon, setSizeViewIcon] = useState(40)
+  const [opacity, setOpacity] = useState(1)
   return (
     <View
       style={{
@@ -41,7 +42,9 @@ export default function () {
             setIconPosition([event.nativeEvent.contentOffset.x, 1.2*event.nativeEvent.contentOffset.x])
             setSizeIcon(20 - 1 / 4 * event.nativeEvent.contentOffset.x)
             setSizeViewIcon(40 - 3 / 4 * event.nativeEvent.contentOffset.x)
+            setOpacity((20-2/3*event.nativeEvent.contentOffset.x)/20)
           } else {
+            setOpacity(0)
             setHeightPlusIcon(0)
             setIconPosition([30, 36])
             setSizeIcon(14.75)
@@ -129,7 +132,7 @@ export default function () {
               backgroundColor: '#3274CB',
               position: 'absolute',
               top: iconPosition[0],
-              left: iconPosition[1]
+              left: iconPosition[1],
             }}
           >
             <AntDesign name="plus" size={sizeIcon} color='#FFF' />
@@ -142,6 +145,7 @@ export default function () {
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: '#FFF',
+              opacity: opacity
             }}
           >
             <AntDesign name="plus" size={heightPlusIcon / 2} color='#3274CB' />

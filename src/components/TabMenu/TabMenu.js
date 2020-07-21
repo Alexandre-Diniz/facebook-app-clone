@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   View,
   Animated
@@ -11,9 +11,12 @@ import Games from './Games'
 import Notificatins from './Notifications'
 import Menu from './Menu'
 
-export default function () {
+export default function ({ showModal }) {
   const [top, setTop] = useState(100)
   const [focused, setFocused] = useState('Home')
+  useEffect(() => {
+    showModal(focused)
+  }, [focused])
   return (
     <Animated.View style={{
       width: '100%',
