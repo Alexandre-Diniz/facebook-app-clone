@@ -50,6 +50,7 @@ export default function () {
         showsHorizontalScrollIndicator={false}
       >
         <Story
+          own
           name='Adicionar ao'
           lastname='story'
           picture={{ uri: 'https://imagens-revista-pro.vivadecora.com.br/uploads/2019/08/%C3%A1rvore-nativas-Pata-de-Vaca-Bauhinia-variegata.jpg' }} />
