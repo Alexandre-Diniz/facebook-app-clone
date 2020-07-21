@@ -43,6 +43,14 @@ export default function () {
             setSizeViewIcon(40 - 3 / 4 * event.nativeEvent.contentOffset.x)
           } else {
             setHeightPlusIcon(0)
+            setIconPosition([30, 36])
+            setSizeIcon(14.75)
+            setSizeViewIcon(17.5)
+            setLeft(0)
+            setTop(80)
+            setBorderLeftWidth(0)
+            setHeight(55)
+            setWidth(64)
           }
         }}
         style={{ flex: 1 }}
@@ -133,7 +141,7 @@ export default function () {
               borderRadius: 40,
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: '#DDD',
+              backgroundColor: '#FFF',
             }}
           >
             <AntDesign name="plus" size={heightPlusIcon / 2} color='#3274CB' />
