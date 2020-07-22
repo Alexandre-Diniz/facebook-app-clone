@@ -13,114 +13,8 @@ import Content from './Content'
 import FeedBack from './FeedBack'
 import Interact from './Interact'
 import Comment from './Comment'
-import WriteDown from './WriteDown'
 
-const data = [
-  {
-    profileURL: require('../../assets/images/mark.jpg'),
-    profileName: 'Alexandre Diniz',
-    time: 'Agora mesmo',
-    _id: `${Math.round(Math.random() * 1000000)}`,
-    visibility: '',
-    react: {
-      icons: [],
-      totalReact: 0,
-      totalComments: 0
-    },
-    content: {
-      type: 'text',
-      value: 'Esse é um exemplo de publicação apenas com conteúdo textual',
-      image:{
-        source:null,
-        exist:false,
-        dimensions:[1000,667]
-      }
-    },
-    comments: [
-      {
-        profileURL: require('../../assets/images/mark.jpg'),
-        profileName: 'Alexandre Diniz',
-        text: 'Muito bom!',
-      }
-    ]
-  },
-  {
-    profileURL: require('../../assets/images/mark.jpg'),
-    profileName: 'Alexandre Diniz',
-    time: 'Agora mesmo',
-    _id: `${Math.round(Math.random() * 1000000)}`,
-    visibility: '',
-    react: {
-      icons: ['heart','haha'],
-      totalReact: 100,
-      totalComments: 9
-    },
-    content: {
-      type: 'text',
-      value: 'Esse é um exemplo de publicação com conteúdo textual e imagem ',
-      image:{
-        source:{uri:'https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/40307/show/santo-amaro-do-maranhao.jpg'},
-        exist:true,
-        dimensions:[1000,667]
-      }
-    },
-    comments: [
-      {
-        profileURL: require('../../assets/images/mark.jpg'),
-        profileName: 'Alexandre Diniz',
-        text: 'Muito bom!',
-      }
-    ]
-  },
-  {
-    profileURL: require('../../assets/images/mark.jpg'),
-    profileName: 'Alexandre Diniz',
-    time: 'Agora mesmo',
-    _id: `${Math.round(Math.random() * 1000000)}`,
-    visibility: '',
-    react: {
-      icons: ['like','heart','haha'],
-      totalReact: 4,
-      totalComments: 10
-    },
-    content: {
-      type: 'text',
-      value: 'Esse é um exemplo de publicação compartilhada',
-      image:{
-        source:null,
-        exist:false,
-        dimensions:[1000,667]
-      }
-    },
-    comments: [
-    ]
-  },
-  {
-    profileURL: require('../../assets/images/mark.jpg'),
-    profileName: 'Alexandre Diniz',
-    time: 'Agora mesmo',
-    _id: `${Math.round(Math.random() * 1000000)}`,
-    visibility: '',
-    react: {
-      icons: ['like','heart'],
-      totalReact: 99,
-      totalComments: 10
-    },
-    content: {
-      type: 'text',
-      value: 'Esse é um exemplo de publicação compartilhada',
-      image:{
-        source:null,
-        exist:false,
-        dimensions:[1000,667]
-      }
-    },
-    comments: [
-    ]
-  }
-]
-
-export default function () {
+export default function ({ data }) {
 
   return <ScrollView style={{ flex: 1 }} >
     {data.map(item => {
@@ -135,7 +29,7 @@ export default function () {
           <Content type={item.content.type} value={item.content.value} image={item.content.image} />
           <FeedBack react={item.react} />
           <Interact/>
-          <Comment comment={item.comments} />
+          <Comment comment={item.comments} source={item.profileURL} />
           <View style={{ width: '100%', height: 10, backgroundColor: '#C8CDD1' }} />
         </View>
       )

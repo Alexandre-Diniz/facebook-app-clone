@@ -8,6 +8,7 @@ import NewPublish from '../components/NewPublish'
 import ContatosOnline from '../components/ContatosOnline'
 import Stories from '../components/Stories/Stories'
 import Feed from '../components/Feed/Feed'
+import dataFeed from '../data/dataFeed'
 
 export default function () {
   return (
@@ -19,7 +20,7 @@ export default function () {
         <View style={{ width: '100%', height: 10, backgroundColor: '#C8CDD1' }} />
         <Stories />
         <View style={{ width: '100%', height: 10, backgroundColor: '#C8CDD1' }} />
-        <Feed />
+        <Feed data={dataFeed()} />
         <View style={{ width: '100%', height: 100, backgroundColor: '#FFF' }} />
       </ScrollView>
     </View>

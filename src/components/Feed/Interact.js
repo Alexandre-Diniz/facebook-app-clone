@@ -17,10 +17,10 @@ export default function () {
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical:2
+        paddingTop:2
       }}
     >
-      <View style={{ width: '94%', height: 0.4, backgroundColor: '#666' }} />
+      <View style={{ width: '94%', height: 0.4, backgroundColor: '#C8CDD1' }} />
       <View
         style={{
           flexDirection: 'row',
@@ -66,7 +66,7 @@ export default function () {
           <Text> Compartilhar</Text>
         </View>
       </View>
-      <View style={{ width: '94%', height: 0.5, backgroundColor: '#666' }} />
+      <View style={{ width: '94%', height: 0.6, backgroundColor: '#C8CDD1' }} />
     </View>
   )
 }

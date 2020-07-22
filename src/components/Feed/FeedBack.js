@@ -84,7 +84,7 @@ export default function ({ react }) {
               width: 100
             }} >
               {icons}
-              <Text style={{ left: react.icons.length * 4, color: '#666', fontSize: 14 }} > {react.totalReact} </Text>
+              <Text style={{ left: (react.icons.length) * 17 + 4, position: 'absolute', color: '#666', fontSize: 14 }} > {react.totalReact} </Text>
             </View>
             :
             <View />
