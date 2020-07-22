@@ -64,34 +64,37 @@ export default function ({ react }) {
     }
   })
   return (
-    <View style={{
-      width: '100%',
-      height: 40,
-      flexDirection: 'row',
-      paddingHorizontal: 10,
-      justifyContent:'space-between',
-      alignItems:'center'
-    }} >
-      {
-        react.totalReact ?
-          <View style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            width: 100
-          }} >
-            {icons}
-            <Text style={{ left: react.icons.length * 4, color: '#666', fontSize:14 }} > {react.totalReact} </Text>
-          </View>
-          :
-          <View/>
-      }
-      {
-        react.totalComments ?
-          <Text style={{color:'#666', fontSize:13}} > {react.totalComments} comentários </Text>
-          :
-          <View/>
-      }
-    </View>
+    react.icons.length === 0 ?
+      <View />
+      :
+      <View style={{
+        width: '100%',
+        height: 40,
+        flexDirection: 'row',
+        paddingHorizontal: 10,
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }} >
+        {
+          react.totalReact !== 0 ?
+            <View style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'row',
+              width: 100
+            }} >
+              {icons}
+              <Text style={{ left: react.icons.length * 4, color: '#666', fontSize: 14 }} > {react.totalReact} </Text>
+            </View>
+            :
+            <View />
+        }
+        {
+          react.totalComments !== 0 ?
+            <Text style={{ color: '#666', fontSize: 13 }} > {react.totalComments} comentários </Text>
+            :
+            <View />
+        }
+      </View>
   )
 }

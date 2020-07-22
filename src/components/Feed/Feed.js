@@ -11,10 +11,13 @@ import {
 import ProfileBar from './ProfileBar'
 import Content from './Content'
 import FeedBack from './FeedBack'
+import Interact from './Interact'
+import Comment from './Comment'
+import WriteDown from './WriteDown'
 
 const data = [
   {
-    profileURL: '',
+    profileURL: require('../../assets/images/mark.jpg'),
     profileName: 'Alexandre Diniz',
     time: 'Agora mesmo',
     _id: `${Math.round(Math.random() * 1000000)}`,
@@ -35,14 +38,14 @@ const data = [
     },
     comments: [
       {
-        profileURL: '',
-        profileName: '',
-        text: '',
+        profileURL: require('../../assets/images/mark.jpg'),
+        profileName: 'Alexandre Diniz',
+        text: 'Muito bom!',
       }
     ]
   },
   {
-    profileURL: '',
+    profileURL: require('../../assets/images/mark.jpg'),
     profileName: 'Alexandre Diniz',
     time: 'Agora mesmo',
     _id: `${Math.round(Math.random() * 1000000)}`,
@@ -63,14 +66,14 @@ const data = [
     },
     comments: [
       {
-        profileURL: '',
-        profileName: '',
-        text: '',
+        profileURL: require('../../assets/images/mark.jpg'),
+        profileName: 'Alexandre Diniz',
+        text: 'Muito bom!',
       }
     ]
   },
   {
-    profileURL: '',
+    profileURL: require('../../assets/images/mark.jpg'),
     profileName: 'Alexandre Diniz',
     time: 'Agora mesmo',
     _id: `${Math.round(Math.random() * 1000000)}`,
@@ -90,15 +93,10 @@ const data = [
       }
     },
     comments: [
-      {
-        profileURL: '',
-        profileName: '',
-        text: '',
-      }
     ]
   },
   {
-    profileURL: '',
+    profileURL: require('../../assets/images/mark.jpg'),
     profileName: 'Alexandre Diniz',
     time: 'Agora mesmo',
     _id: `${Math.round(Math.random() * 1000000)}`,
@@ -118,11 +116,6 @@ const data = [
       }
     },
     comments: [
-      {
-        profileURL: '',
-        profileName: '',
-        text: '',
-      }
     ]
   }
 ]
@@ -137,10 +130,12 @@ export default function () {
             time='Agora mesmo'
             profileName='Alexandre Diniz'
             visible='world'
-            profileURI={require('../../assets/images/mark.jpg')}
+            profileURI={item.profileURL}
           />
           <Content type={item.content.type} value={item.content.value} image={item.content.image} />
           <FeedBack react={item.react} />
+          <Interact/>
+          <Comment comment={item.comments} />
           <View style={{ width: '100%', height: 10, backgroundColor: '#C8CDD1' }} />
         </View>
       )
