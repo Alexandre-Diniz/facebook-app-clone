@@ -20,6 +20,7 @@ export default function () {
         <Stories />
         <View style={{ width: '100%', height: 10, backgroundColor: '#C8CDD1' }} />
         <Feed />
+        <View style={{ width: '100%', height: 100, backgroundColor: '#FFF' }} />
       </ScrollView>
     </View>
   )
