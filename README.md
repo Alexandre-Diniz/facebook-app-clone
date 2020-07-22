@@ -12,7 +12,7 @@ type: 'normal', 'online', 'status'. The default value is 'normal'
 ### Story
 #### props:
 
-###### source: 
+##### source: 
 require('image_path.extension') or {uri:'image_uri.extension'}
 
 source for ProfilePicture
@@ -31,4 +31,4 @@ Name for bottomlevel
 ##### own: 
 default false. If true, don't show profile picture
 
-![Alt text](documentation/sotry.jpeg?raw=true "Appearence of normal profile image")
+![Alt text](documentation/story.jpeg?raw=true "Appearence of normal profile image")
